@@ -1,0 +1,141 @@
+{% extends "navapp/base.html" %}
+{% load static %}
+
+{% block title_block %}Hostel Enquiry{% endblock title_block %}
+{% block style_block %}
+<link rel="stylesheet" href="{% static 'hostel.css' %}">
+{% endblock %} 
+
+{% block body_block %}
+
+<main>
+    <section>
+        <div class="coverpic">
+            <img src="static/hostel.jpeg" alt="coverpic">
+        </div>
+    
+        <div class="text-hostel">
+            <h1 class="head">  Hostel Allotment Procedure </h1>
+    
+            <h5 id="">Step 1:</h5>
+    <p> Ensure that your name is in Hostel Allotment List 
+        <a href= "https://www.cuh.ac.in/Hostel.aspx?category=facilities">Check list here</a>
+    </p>
+    
+    <h5>Step 2:</h5>
+    <p> Download the Hostel Allotment Form <a href= "https://www.cuh.ac.in/admin/uploads/department/hostel/hostel_form_chalan.pdf">Click here</a> </p>
+    
+    <h5>Step 3:</h5>
+    <p> Prepare the following documents:
+        <ol>
+            <li>CUCET Score Card (if applicable)</li>
+              <li>  CGPA and Aggregate Marks Sheet of CUH</li>
+              <li>  Letter for supervisor/HoD in case of old Ph.D. Student</li>
+              <li>  Voter ID Card of Father/ Mother</li>
+              <li>  Category Certificate (if applicable)</li>
+              <li>  Medical Fitness Certificate</li>
+              <li>  Receipt/ Challan of Payment of current semester</li>
+        </ol>
+    </p>
+    
+    <h5>Step 4:</h5>
+    <p> Make the payment of hostel according to <a href= "https://www.cuh.ac.in/admin/uploads/department/hostel/Hostel%20Fee%20Structure%202023-24.pdf "> Fee Structure</a> to the University bank through any Punjab National Bank (check hostel form for bank details) </p>
+    
+    
+    <h5>Step 5:</h5>
+    <p> Get signature of your concerned Head of Department (HOD) on the hostel form. 
+        <!-- Add the dropdown menu -->
+    {% comment %} <p> {% endcomment %}
+        Department:
+        <select id="departmentSelect" onchange="showAdmissionInfo()">
+            <option value="default">Select your Department</option>
+            <option value="cse">Computer Science & Engineering</option>
+            <option value="civil">Civil Engineering</option>
+            <option value="ee">Electrical Engineering</option>
+            <option value="ppt">Printing & Packing Technology</option>
+            
+        </select>
+        {% comment %} <button onclick="showAdmissionInfo()">Show Admission Info</button> {% endcomment %}
+        <div id="admissionInfo"></div>
+
+        {% comment %} <a href= {% url "all-school-page" %}>(Check where is HOD's Office)</a> {% endcomment %}
+    </p>
+    
+    <h5>Step 6:</h5>
+    <p> Submit the form in your respective Hostel warden <!-- Add the dropdown menu -->
+        {% comment %} <p> {% endcomment %}
+            
+            <select id="hostelSelect" onchange="showHostelInfo()">
+                <option value="default">Select your Hostel</option>
+                <option value="boysHostel">Boys</option>
+                <option value="girlsHostel">Girls</option>
+            </select>
+            {% comment %} <button onclick="showAdmissionInfo()">Show Admission Info</button> {% endcomment %}
+            <div id="hostelInfo"> </div>
+    
+        {% comment %} <ul>
+            <li> Boys Hostel Office Contact no.: 01285-260177 </li>              
+            <li>   Girls Hostel Office Contact no.: 01285-260178 </li>
+        </ul>   {% endcomment %}
+    </p>
+            
+        {% comment %} </div> {% endcomment %}
+    </section> 
+    </main>
+    <script>
+        {% comment %} function showAdmissionInfo() {
+            var department = document.getElementById("departmentSelect").value;
+            var admissionInfoDiv = document.getElementById("admissionInfo");
+    
+            if (department === "cse") {
+                admissionInfoDiv.innerHTML = "Room No- 105, Academic Block-3";
+            } 
+            else if (department === "default") {
+                admissionInfoDiv.innerHTML = "";
+            } 
+            else if (department === "civil") {
+                admissionInfoDiv.innerHTML = "Admission in 108 for Civil";
+            }
+            else if (department === "boysHostel") {
+                admissionInfoDiv.innerHTML = "Boys Hostel Office Contact no.: 01285-260177. Provost office - Room No. 215, Academic Block- 4";
+            }
+        } {% endcomment %}
+
+        function showAdmissionInfo() {
+            var department = document.getElementById("departmentSelect").value;
+            var admissionInfoDiv = document.getElementById("admissionInfo");
+    
+            if (department === "cse") {
+                admissionInfoDiv.innerHTML = "HOD Office Room No- 107, Academic Block-3";
+            } 
+            else if (department === "default") {
+                admissionInfoDiv.innerHTML = "";
+            } 
+            else if (department === "civil") {
+                admissionInfoDiv.innerHTML = "HOD Office in Room No- 03, C.V. Raman Block";
+            }
+            else if (department === "ee") {
+                admissionInfoDiv.innerHTML = "HOD Office in Room No- 23, C.V. Raman Block";
+            }
+            else if (department === "ppt") {
+                admissionInfoDiv.innerHTML = "HOD Office in Room No- 13, C.V. Raman Block";
+            }
+        };
+        function showHostelInfo() {
+            var department = document.getElementById("hostelSelect").value;
+            var hostelInfoDiv = document.getElementById("hostelInfo");
+
+            if (department === "boysHostel") {
+                hostelInfoDiv.innerHTML = "Boys Hostel Provost Office - Room No- 205, Academic Block-4";
+            }
+            else if (department === "default") {
+                hostelInfoDiv.innerHTML = "";
+            } 
+            else if (department === "girlsHostel") {
+                hostelInfoDiv.innerHTML = "Girls Hostel Provost Office - Room No- 105, Academic Block-3";
+            }
+        } 
+    </script>
+{% comment %} {% endblock body_block %} {% endcomment %}
+
+{% endblock %}

@@ -1,0 +1,326 @@
+/* CSS */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#headline {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.school {
+    margin-top: 20px;
+    width: 100%;
+    /* height: 500px; */
+}
+
+.container {
+    height: 100vh;
+}
+
+/* .schoolList {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 40px;
+    /* flex-direction: column; */
+    /* align-items: center;
+    justify-content: center; */
+    /* gap: 20px; */
+    /* padding: 5px 30px; */
+    /* margin: 0px;
+    padding: 0px;
+    width: 100%;
+} */
+
+#schoolName {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button-85 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #003459;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    margin: 10px;
+    height: calc(100vh/5.4);
+    font-size: 1.5rem;
+}
+
+#schoolList {
+    margin-bottom: 10px;
+    background-color: #0ff;
+}
+
+h3 {
+    color: white;
+}
+
+.button-85:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #003459;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+
+/* Department Button styling */
+.col {
+    display: flex;
+    justify-content: center;
+}
+
+.button-74 {
+    margin-top: 15px;
+    background-color: #fbeee0;
+    border: 1px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 2px 2px 0 0;
+    color: #422800;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-weight: 600;
+    font-size: 18px;
+    /* padding: 0 18px; */
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    justify-content: center;
+    /* width: 50%; */
+}
+
+.button-74:hover {
+    background-color: #fff;
+}
+
+.button-74:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .button-74 {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+/* Indepartment styling */
+.container2 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    font-family: arial;
+    border: none;
+    outline: none;
+}
+
+
+.container2 .card {
+    width: calc(100%/4.1);
+    position: relative;
+}
+
+#listOfDepartment {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container .card .face {
+    width: 300px;
+    height: 200px;
+    transition: .4s;
+}
+
+.container .card .face.face1 {
+    position: relative;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: 1;
+    /* transform: translateY(100px); */
+    width: 100%;
+}
+
+.container .card:hover .face.face1 {
+    transform: translateY(0);
+    box-shadow:
+        inset 0 0 60px whitesmoke,
+        inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff,
+        inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff,
+        0 0 50px #fff,
+        -10px 0 80px #f0f,
+        10px 0 80px #0ff;
+}
+
+
+.container .card .face.face1 .content {
+    opacity: .2;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.container .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.container .card .face.face1 .content i {
+    font-size: 3em;
+    color: white;
+    display: inline-block;
+}
+
+.container .card .face.face1 .content h3 {
+    font-size: 1em;
+    color: white;
+    text-align: center;
+}
+
+.container .card .face.face1 .content a {
+    transition: .5s;
+}
+
+.container .card .face.face2 {
+    position: relative;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .8);
+    transform: translateY(-100px);
+    width: 100%;
+}
+
+.container .card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p,
+a {
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container .card .face.face2 .content a {
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    outline: 1px dashed #333;
+    padding: 10px;
+    margin: 15px 0 0;
+    display: inline-block;
+}
+
+.container .card .face.face2 .content a:hover {
+    background: #333;
+    color: whitesmoke;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Updated on 22-11-2023 @Prince Lal */
+#schoolName {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    color: #1900ff;
+    font-weight: bold;
+}
+
+#schoolLocation {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.school a {
+    text-decoration: none;
+}
+
+/* 23-11-2023  */
+/* #schoolButton{
+display: flex;
+width: 40%;} */
+
+#all-school{
+    width: 100vw;
+}

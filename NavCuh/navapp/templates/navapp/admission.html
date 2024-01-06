@@ -1,0 +1,149 @@
+{% extends "navapp/base.html" %}
+{% load static %}
+``
+{% block title_block %}Admission Enquiry {% endblock title_block %}
+{% block style_block %}
+<link rel="stylesheet" href="{% static "admission.css" %}">
+
+{% endblock %} 
+
+{% block body_block %} 
+<main>
+    <section>
+        <div class="coverpic">
+            <img src="static/ab.jpeg" alt="coverpic">
+        </div>
+    
+        <div class="text-hostel">
+            <h1 class="head">  Admission Procedure </h1>
+    
+            <h5 id="">Step 1:</h5>
+    <p> The Central University of Haryana runs its admission process via CUET-UG scores for the selection of candidates to its four-year UG and five-year Integrated courses. 
+        <a href= "https://cdnasb.samarth.ac.in/site-admin23/pn/IBCUETUG2023.pdf"><br>Brochure for Admission</a>
+    </p>
+    
+    <h5>Step 2:</h5>
+    <p> Check the seat matrix for availability of seats in the desired course:
+        <ul>
+            <li><a href = "https://www.cuh.ac.in/admin/uploads/admission/2023/UG/Seat%20Matrix-BTech%20Programmes-2023.pdf">Seat Matrix for BTech UG </a></li>
+            <li><a href = "https://www.cuh.ac.in/admin/uploads/admission/2023/UG/Seat%20Matrix-UG%20(Except%20B.Tech).pdf">Seat Matrix for UG (except BTech) </a></li>
+            <li><a href = "https://www.cuh.ac.in/admin/uploads/admission/2023/PG/Seat%20Matrix-PG_20230726.pdf">Seat Matrix for PG </a></li>
+            <li><a href = "https://phd.cuh.ac.in/">Seat Matrix for Ph.D.</a></li>
+              
+        </ul>
+    </p>
+    <h5>Step 3:</h5>
+    <p> Visit the admission portal of Central University of Haryana <a href= "https://cuhcuet.samarth.edu.in/">Click here</a>
+    <br> <u>Register yourself for counselling</u> on the basis of CUET score.
+    </p>
+    
+    
+    <h5>Step 4:</h5>
+    <p> Participate in the counselling process. You can seek general instructions for counselling Procedure <a href = "https://samarth-ac.s3.ap-south-1.amazonaws.com/haryana-central-university/admissioncuet23/fc56a5bbd8147658ae9596341211c4bf88f66693f5f2e2f0169cb76ac0ed1dd1468/1689677779468_admission_docs.pdf">UG Here</a> / <a href = "https://cuh.ac.in/admin/uploads/admission/2023/PG/General%20Instructions%20for%20Online%20Registration-Programmes%20offered%20through%20CUET%20PG-2023.pdf">PG Here</a><br>
+    
+    You can seek help through helpline numbers available <a href = "https://samarth-ac.s3.ap-south-1.amazonaws.com/haryana-central-university/admissioncuet23/fc56a5bbd8147658ae9596341211c4bf88f66693f5f2e2f0169cb76ac0ed1dd1468/1689760493468_admission_docs.pdf">UG Here</a> /
+    <a href = "https://samarth-ac.s3.ap-south-1.amazonaws.com/haryana-central-university/admissioncuet23/fc56a5bbd8147658ae9596341211c4bf88f66693f5f2e2f0169cb76ac0ed1dd1468/1690372026468_admission_docs.pdf">PG Here</a> 
+        <br>
+    
+    You can visit CUET-Samarth to Apply directly: <a href = "https://cuhcuet.samarth.edu.in/index.php">UG Here</a> /
+    <a href = "https://cuhcuet.samarth.edu.in/pg/index.php">PG Here</a> 
+    
+</p>
+
+
+
+<h5>Step 5:</h5>
+<p> If you get admitted through couselling, Visit the campus physically for document verification to your respctive 
+    
+    <!-- Add the dropdown menu -->
+    {% comment %} <p> {% endcomment %}
+        Department:
+        <select id="departmentSelect" onchange="showAdmissionInfo()">
+            <option value="default">Select your Department</option>
+            <option value="cse">Computer Science & Engineering</option>
+            <option value="civil">Civil Engineering</option>
+            <option value="ee">Electrical Engineering</option>
+            <option value="ppt">Printing & Packing Technology</option>
+            
+        </select>
+        {% comment %} <button onclick="showAdmissionInfo()">Show Admission Info</button> {% endcomment %}
+        <div id="admissionInfo"></div>
+    {% comment %} </p> {% endcomment %}
+    {% comment %} <br>  {% endcomment %}
+    {% comment %} <a href = {% url "all-school-page" %}>Check your Officials</a> {% endcomment %}
+</p>
+
+<h5>Step 6:</h5>
+<p> Unfortunately, If you didn't get admitted, You can try in Open/Physical counselling <br>
+    <a href = "https://www.cuh.ac.in/openCounseling.aspx">Visit Here</a> for more details 
+</p>
+
+        </div>
+    </section> 
+    </main>
+    {% comment %} <script>
+        function toggleDropdown() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+    
+        function showAdmissionInfo(department) {
+          var infoDiv = document.getElementById("admissionInfo");
+          if (department === 'CSE') {
+            infoDiv.innerHTML = "<p>Admission in CSE - Content for CSE department goes here.</p>";
+          } else if (department === 'Civil') {
+            infoDiv.innerHTML = "<p>Admission in Civil - Content for Civil department goes here.</p>";
+          }
+          // You can add more conditions for other departments if needed
+        }
+    
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        };
+      </script> {% endcomment %}
+
+
+      {% comment %} <script>
+        function showAdmissionInfo() {
+            var department = document.getElementById("departmentSelect").value;
+            var admissionInfoDiv = document.getElementById("admissionInfo");
+    
+            if (department === "cse") {
+                admissionInfoDiv.innerHTML = "Admission in 108 for CSE";
+            } else if (department === "civil") {
+                admissionInfoDiv.innerHTML = "Admission in 108 for Civil";
+            }
+        }
+    </script> {% endcomment %}
+
+    <script>
+        function showAdmissionInfo() {
+            var department = document.getElementById("departmentSelect").value;
+            var admissionInfoDiv = document.getElementById("admissionInfo");
+    
+            if (department === "cse") {
+                admissionInfoDiv.innerHTML = "Admission in Room No- 107, Academic Block-3";
+            } 
+            else if (department === "default") {
+                admissionInfoDiv.innerHTML = "";
+            } 
+            else if (department === "civil") {
+                admissionInfoDiv.innerHTML = "Admission in Room No -08, C.V.Raman Block";
+            }
+            else if (department === "ee") {
+                admissionInfoDiv.innerHTML = "Admission in Room No -18, C.V.Raman Block";
+            }
+            else if (department === "ppt") {
+                admissionInfoDiv.innerHTML = "Admission in Room No -28, C.V.Raman Block";
+            }
+        }
+    </script>
+{% endblock %}

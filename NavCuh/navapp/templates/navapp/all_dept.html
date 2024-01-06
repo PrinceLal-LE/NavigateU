@@ -1,0 +1,24 @@
+{% extends "navapp/base.html " %} 
+{% load static %} 
+
+{% block title_block %}All Departments{% endblock %}
+
+{% block style_block %} 
+{% endblock %} 
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'all_department.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'all_schools.css' %}"> {% endcomment %}
+
+<section id="all-dept">
+  <h1><b> {{school.school_name}} </b></h1>
+  <p id="school-description">{{school.school_description}}</p>
+  <h2 id="departments"><b>Departments</b></h2>
+  <div class="flex-container2">
+    {% for dept in all_dept %}
+    {% include "navapp/includes/dept.html" %} 
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

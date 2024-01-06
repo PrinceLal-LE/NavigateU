@@ -1,0 +1,81 @@
+body {
+  margin: 0px;
+  background-color: hsl(0, 100%, 97%);
+}
+
+main {
+  margin: 16px;
+  text-align: center;
+}
+
+.coverpic {
+  text-align: center;
+}
+
+.coverpic>img {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.text-hostel {
+  text-align: left;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-hostel h1 {
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.text-hostel h5 {
+  font-weight: bold;
+}
+
+.text-hostel p {
+  font-size: larger;
+}
+
+#heading {
+  font-size: 24px;
+  font-weight: 900;
+  /* font-family: 'Times New Roman', Times, serif; */
+}
+
+/* .para {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+    line-height: 1.4;
+} */
+
+.sidebar>img {
+  width: 100%;
+}
+
+section {
+  display: inline-block;
+
+  width: 70%;
+  max-width: 800px;
+  margin-right: 24px;
+  background-color: white;
+  /* box-shadow: 3px 0 6px #ccc; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    display: block;
+    width: 100%;
+  }
+}
+
+.dropdown-content {
+  display: none;
+}

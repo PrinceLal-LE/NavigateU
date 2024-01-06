@@ -1,0 +1,22 @@
+{% extends "navapp/base.html " %} 
+{% load static %} 
+
+{% block title_block %}All Departments{% endblock %}
+
+{% block style_block %} 
+
+{% endblock %} 
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'allTeacher.css' %}" />
+<section id="allTeachers">
+  <h2><b>Teachers</b></h2>
+  <div class="articles">
+    {% comment %} <img src={{ teacher.image.url }} , alt="{{teacher.name}}"> {% endcomment %}
+    {% for teacher in all_teachers %}
+    {% include "navapp/includes/teacher.html" %} 
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

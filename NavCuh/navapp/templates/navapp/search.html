@@ -1,0 +1,111 @@
+{% extends "navapp/base.html" %}
+{% load static %}
+``
+{% block title_block %}Hostel Enquiry{% endblock title_block %}
+{% block style_block %}
+<link rel="stylesheet" href="{% static 'search.css' %}">
+{% endblock %} 
+{% block body_block%} 
+<main>
+    
+    
+    <section>
+    <h2> 
+        Here are results for '<b>{{searched}}</b>' :
+    </h2>
+
+
+{% if searched_depts %}
+{% for dept in searched_depts %}
+
+<a href="{% url "all-teachers-page" dept.slug %}" >
+    {{dept.dept_name}}
+    {% comment %} <br> {% endcomment %}
+</a>
+{% endfor %}
+{% endif %}
+
+{% comment %} searched by HOD name {% endcomment %}
+{% if searched_hod %}
+{% for dept in searched_hod %}
+
+<a href="{% url "all-teachers-page" dept.slug %}" >
+    {{dept.head_name}} : 
+    {{dept.dept_name}}
+    {% comment %} <br> {% endcomment %}
+</a>
+{% endfor %}
+{% endif %}
+
+{% comment %} searched by location{% endcomment %}
+{% if searched_by_dept_loc %}
+{% for dept in searched_by_dept_loc %}
+
+<a href="{% url "all-teachers-page" dept.slug %}" >
+    {{dept.location}} : 
+    {{dept.dept_name}}
+    {% comment %} <br> {% endcomment %}
+</a>
+{% endfor %}
+{% endif %}
+
+
+
+{% comment %}
+ If you seach for a teachers by name
+{% endcomment %}
+{% if searched_teacher %}
+{% for teacher in searched_teacher %}
+
+    <a href="{% url "all-teachers-page" teacher.department.slug %}" >
+        {{teacher.name}} : {{teacher.department}}
+        {% comment %} <br> {% endcomment %}
+    </a>
+{% endfor %}
+{% endif %}
+
+{% comment %}
+ If you seach for a teachers Office No.
+{% endcomment %}
+{% if seacherd_by_office %}
+{% for teacher in seacherd_by_office %}
+
+    <a href="{% url "all-teachers-page" teacher.department.slug %}" >
+    
+         {{teacher.office}} : {{teacher.name}}
+        {% comment %} <br> {% endcomment %}
+    </a>
+{% endfor %}
+{% endif %}
+
+
+
+{% comment %}
+ If you seach for a School
+{% endcomment %}
+{% if searched_school %}
+{% for school in searched_school %}
+
+    <a href="{% url "all-dept-page" school.slugy %}" >
+        {{school.school_name}}
+        {% comment %} <br> {% endcomment %}
+    </a>
+{% endfor %}
+{% endif %}
+
+{% if school_search_for_loc %}
+{% for school in school_search_for_loc %}
+
+    <a href="{% url "all-dept-page" school.slugy %}" >
+        {{school.location}} : 
+        {{school.school_name}} 
+        {% comment %} <br> {% endcomment %}
+    </a>
+{% endfor %}
+{% endif %}
+
+
+</section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "navapp/base.html" %}
+{% load static %}
+
+{% block title_block %}CUH navigation{% endblock %} 
+
+{% block style_block %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %} 
+
+{% block body_block %}
+
+
+
+<div class="container2 "> 
+    <div class="main-image">   
+        <img id="img" src="static/map.png"/>
+
+    {% comment %} Academic Block 1 {% endcomment %}
+    <div class="academicBlock1">
+        <div id="departmentListBlock1">
+            <ul>
+            <li>Department of Physics</li>
+            <li><a class="textDecorationDepartment" href="{% url 'all-teachers-page' slug='biochemistry' %}">Department of BioChemistry</li>
+            {% comment %} <p>Computer Science & Engineering</p> {% endcomment %}
+            </ul>
+        </div>
+    </div>
+
+    {% comment %} Academic Block 3 {% endcomment %}
+    <div class="academicBlock3">
+        <div id="departmentListBlock3">
+            <ul>
+            <li><a class="textDecorationDepartment" href="{% url 'all-teachers-page' slug='law-department' %}">Department of Law</li>
+            <li><a class="textDecorationDepartment" href="{% url 'all-teachers-page' slug='computer-science-engineering' %}">Department of Computer Science and Engineering</li>
+            </ul>
+        </div>
+    </div>
+
+    {% comment %} Academic Block 4 {% endcomment %}
+    <div class="academicBlock4">
+        <div id="departmentListBlock4">
+            <ul>
+            <li><a class="textDecorationDepartment" href="{% url 'all-teachers-page' slug='journalism-and-mass-communication' %}">Department of Jourlism and Mass Communication</li>
+            <li>Department of Teacher Education</li>
+            </ul>
+        </div>
+    </div>
+
+    {% comment %} C.V.Raman Block {% endcomment %}
+    <div class="soetBlock">
+        <div id="soetDepartmentList">
+            <ul>
+                <li><a class="textDecorationDepartment" href="{% url 'all-teachers-page' slug='civil-engineering' %}">Civil Engineering</li>
+                <li><a class="textDecorationDepartment" href="{% url 'all-teachers-page' slug='electrical-engineering' %}">Printing & Packing Technology</li>
+                <li><a class="textDecorationDepartment" href="{% url 'all-teachers-page' slug='printing-and-packaging-technology' %}">Electrical Engineering</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Zoomed-in image container -->
+{% comment %} <div class="zoom-container">
+    <img id="zoomed-img" src="static/map.png" alt="Zoomed Image" />
+  </div> {% endcomment %}
+
+
+{% comment %} </style> {% endcomment %}
+<script>
+
+// Add this JavaScript code to show/hide the zoomed image
+const mainImage = document.getElementById('img');
+const zoomedContainer = document.querySelector('.zoom-container');
+const zoomedImg = document.getElementById('zoomed-img');
+
+const zoomSize = 20; // Size of the zoomed area (20px x 20px)
+
+mainImage.addEventListener('mousemove', (e) => {
+  // Calculate the position of the mouse relative to the main image
+  const x = e.clientX - mainImage.getBoundingClientRect().left;
+  const y = e.clientY - mainImage.getBoundingClientRect().top;
+
+  // Calculate the background position for the zoomed image
+  const bgX = (x / mainImage.offsetWidth) * (zoomedImg.offsetWidth - zoomSize);
+  const bgY = (y / mainImage.offsetHeight) * (zoomedImg.offsetHeight - zoomSize);
+
+  // Update the background position of the zoomed image
+  zoomedImg.style.backgroundPosition = `-${bgX}px -${bgY}px`;
+
+  // Display the zoomed image container
+  zoomedContainer.style.display = 'block';
+  // Position the zoomed container at the bottom right of the page
+  zoomedContainer.style.right = '0';
+  zoomedContainer.style.bottom = '0';
+  zoomedContainer.style.top = 'auto';
+  zoomedContainer.style.left = 'auto';
+});
+
+mainImage.addEventListener('mouseleave', () => {
+  // Hide the zoomed image container when the mouse leaves
+  zoomedContainer.style.display = 'none';
+});
+
+
+</script>
+
+
+{% endblock %}

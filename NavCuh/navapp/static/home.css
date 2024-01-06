@@ -1,0 +1,211 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.container2{
+  margin: 0px;
+  padding: 10px 10px 5px 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+
+.container2 #img {
+  /* min-height:60vh; */
+  /* margin: 30px; */
+  height: 83vh;
+  width: 100%;
+  opacity: 0.8;
+  border-radius: 20px;
+
+}
+
+.academicBlock1{
+  position: absolute;
+  border-style: none;
+  height: 50px;
+  width: 90px;
+  top: 13%;
+  left: 19%;
+  cursor: pointer;
+}
+
+/* Common css implemented for all block */
+#departmentListBlock1, #departmentListBlock3, #departmentListBlock4{
+  /* display: hidden; */
+  visibility: hidden;
+  position: absolute;
+  /* background-color: rgba(133, 115, 101, 0.836); */
+  background-color: rgba(133, 115, 101, 1);
+  color: white;
+  width: 200px;
+  margin-left: -50px;
+  margin-top: 45px;
+  border-radius: 10px;
+  padding: 0px 10px;
+  /* text-align: center; */
+}
+#departmentListBlock1::before, #departmentListBlock3::before, #departmentListBlock4::before {
+  content: ''; /* Create an empty content for the arrow */
+  position: absolute;
+  top: -20px; /* Adjust this value to position the arrow vertically */
+  left: 50%; /* Center the arrow horizontally */
+  margin-left: -10px; /* Adjust this value to center the arrow properly */
+  border-width: 10px; /* Adjust the size of the arrow */
+  border-style: solid;
+  border-color: transparent transparent rgba(133, 115, 101, 1) transparent;
+  /* margin-bottom: 0rem ; */
+}
+.academicBlock1:hover #departmentListBlock1 {
+  visibility: visible;
+}
+
+/* Academic Block 3 */
+.academicBlock3{
+  position: absolute;
+  border-style: none;
+  height: 50px;
+  width: 90px;
+  top: 03.5%;
+  left: 32%;
+  cursor: pointer;
+}
+
+#departmentListBlock3{
+  /* display: hidden; */
+  visibility: hidden;
+  /* background-color: rgba(133, 115, 101, 0.836); */
+  /* width: 170px; */
+}
+.academicBlock3:hover #departmentListBlock3 {
+  visibility: visible;
+}
+
+/* Academic Block 4 */
+.academicBlock4{
+  position: absolute;
+  border-style: none;
+  height: 50px;
+  width: 90px;
+  top: 14%;
+  left: 37%;
+  cursor: pointer;
+
+}
+
+#departmentListBlock4{
+  /* display: hidden; */
+  visibility: hidden;
+  /* background-color: rgba(133, 115, 101, 0.836); */
+  /* width: 200px; */
+  
+}
+
+#departmentListBlock4 p{
+  padding: 0px;
+  margin: 0px;
+}
+.academicBlock4:hover #departmentListBlock4 {
+  visibility: visible;
+}
+
+/* SOET Block (C.V.Raman) */
+.soetBlock{
+  position: absolute;
+  border-style: none;
+  height: 20px;
+  width: 50px;
+  bottom: 20%;
+  left: 31.5%;
+  cursor: pointer;
+}
+#soetDepartmentList{
+  /* display: hidden; */
+  visibility: hidden;
+  position: absolute;
+  background-color: rgba(133, 115, 101, 1);
+  color: white;
+  width: 200px;
+  margin-top: 30px;
+  margin-left: -80px;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+
+#soetDepartmentList::before{
+  content: ''; /* Create an empty content for the arrow */
+  position: absolute;
+  top: -20px; /* Adjust this value to position the arrow vertically */
+  left: 50%; /* Center the arrow horizontally */
+  margin-left: -10px; /* Adjust this value to center the arrow properly */
+  border-width: 10px; /* Adjust the size of the arrow */
+  border-style: solid;
+  border-color: transparent transparent rgba(133, 115, 101, 1) transparent;
+
+}
+
+.soetBlock:hover #soetDepartmentList {
+  visibility: visible;
+}
+
+ul, li{
+  margin: 0px;
+  padding: 0px 5px;
+}
+
+#departmentListBlock1 ul, #departmentListBlock3 ul, #departmentListBlock4 ul, #soetDepartmentList ul{
+  margin-bottom: 0rem ;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#departmentListBlock1 li:hover, #departmentListBlock3 li:hover, #departmentListBlock4 li:hover, #soetDepartmentList li:hover {
+  background-color:  rgb(85, 72, 63);
+  border-radius: 10px;
+
+}
+/* Stying None to "a" tag under all the block */
+.textDecorationDepartment{
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+
+/* Main image container */
+.main-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Main image */
+#img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Zoomed-in image container */
+.zoom-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+  display: none; /* Initially hidden */
+  background-color: white; /* You can adjust the background color as needed */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+}
+
+/* Style the zoomed image inside the container */
+#zoomed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: none; /* Prevents the image from covering the entire container */
+}

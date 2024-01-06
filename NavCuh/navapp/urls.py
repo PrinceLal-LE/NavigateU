@@ -1,0 +1,16 @@
+from django.urls import path
+from . import views
+from django.conf.urls.static import static
+from django.conf import settings
+
+urlpatterns = [
+    path("", views.home, name="starting_page"),
+    path("schools", views.AllSchoolView.as_view(), name="all-school-page"),
+    path("school/<slug:slugy>", views.AllDeptView.as_view(), name="all-dept-page"),
+    path("department/<slug:slug>", views.AllTeacherView.as_view(), name="all-teachers-page"),
+    path("search", views.searchbar, name="search-page"),
+    path("hostel", views.hostel, name="hostel"),
+    path("admission", views.admission, name="admission"),
+
+
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
